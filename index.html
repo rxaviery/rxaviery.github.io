@@ -28,11 +28,11 @@
         }
         .pic{
             display: block;
-            width: 250px;
+            width: 150px;
             margin-left: auto;
             margin-right: auto;
             border:3px solid #000000;
-            border-radius: 50%;
+            border-radius: 100%;
         }
         p {
             font-size: 20px;
@@ -40,6 +40,24 @@
         }
         p strong {
             color: #d81b60;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6a1b9a;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #d81b60;
         }
     </style>
 </head>
@@ -59,10 +77,11 @@
         <p>I have skills in code creativity and debugging.</p>
 
         <h2>External Links:</h2>
-        <a href="https://github.com/rxaviery">Github Profile</a>
-        <a href="https://www.facebook.com/renz.pastrana.16">Facebook</a>
-        <a href="https://rxaviery.github.io/html/fashionblog/index.html">Fashion Blog</a>
-
+        <div class="button-container">
+            <a href="https://github.com/rxaviery" class="button">Github Profile</a>
+            <a href="https://www.facebook.com/renz.pastrana.16" class="button">Facebook</a>
+            <a href="https://rxaviery.github.io/html/fashionblog/index.html" class="button">Fashion Blog</a>
+        </div>
     </div>
 </body>
 </html>
