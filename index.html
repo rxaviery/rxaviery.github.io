@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Portfolio</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 20px;
@@ -12,38 +16,45 @@
             background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
             color: #333;
         }
+
         .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 800px;
-            margin: 50px auto;
+            margin: 25px auto;
         }
+
         h2 {
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 15px;
             color: #6a1b9a;
         }
-        .pic{
+
+        .pic {
             display: block;
             width: 150px;
             margin-left: auto;
             margin-right: auto;
-            border:3px solid #000000;
-            border-radius: 100%;
+            border: 3px solid #000000;
+            border-radius: 10%;
         }
+
         p {
             font-size: 20px;
             margin-bottom: 25px;
         }
+
         p strong {
             color: #d81b60;
         }
+
         .button-container {
             margin-top: 20px;
         }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
@@ -56,32 +67,105 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
+
         .button:hover {
             background-color: #d81b60;
+        }
+
+        .nav-container {
+            background-color: #6a1b9a;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #6a1b9a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .wie:hover {
+            color: #d81b60;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes click-flash {
+            0% { background-color: #d81b60; }
+            100% { background-color: #6a1b9a; }
+        }
+
+        .button:active {
+            animation: click-flash 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img class ="pic" src="https://rxaviery.github.io/pic.jpg" alt="">
+    <div class="nav-container">
+        <nav>
+            <ul>
+                <li><a href="#about" class="wie">About Me</a></li>
+                <li><a href="#favorites" class="wie">Favorites</a></li>
+                <li><a href="#projects" class="wie">School Projects</a></li>
+                <li><a href="#talents" class="wie">Talents</a></li>
+                <li><a href="#links" class="wie">External Links</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="about" class="container">
+        <img class="pic" src="https://rxaviery.github.io/pic.jpg" alt="">
         <h2>About Me</h2>
         <p><strong>Hello!</strong> I am <strong>Renz Xaviery O. Pastrana</strong>, a 2nd year Information Technology (IT) student at the University of Immaculate Conception (UIC).</p>
+    </div>
 
+    <div id="favorites" class="container">
         <h2>Favorites</h2>
         <p>Playing Mobile/PC games, reading books, and watching movies and videos online.</p>
+    </div>
 
+    <div id="projects" class="container">
         <h2>School Projects</h2>
         <p>During my Computer Programming 2 course, my partner and I completed a final project called <strong>"Book-It-Now"</strong>. This ICTDU Booking System project included a GUI and SQL database.</p>
+    </div>
 
+    <div id="talents" class="container">
         <h2>Talents</h2>
         <p>I have skills in code creativity and debugging.</p>
+    </div>
 
-        <h2>External Links:</h2>
+    <div id="links" class="container">
+        <h2>External Links</h2>
         <div class="button-container">
             <a href="https://github.com/rxaviery" class="button">Github Profile</a>
             <a href="https://www.facebook.com/renz.pastrana.16" class="button">Facebook</a>
             <a href="https://rxaviery.github.io/html/fashionblog/index.html" class="button">Fashion Blog</a>
         </div>
     </div>
+
 </body>
 </html>
