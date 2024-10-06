@@ -1,0 +1,301 @@
+ html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-image: url('https://rxaviery.github.io/pictures/pic-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 25px auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #6a1b9a;
+        }
+
+        .pic {
+            display: block;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #000000;
+            border-radius: 23px;
+        }
+
+        .project-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pic2,
+        .pic3 {
+            width: 220px;
+            height: auto;
+            border: 1px solid #000000;
+            border-radius: 23px;
+        }
+
+        .pic-smac {
+            width: 220px;
+            height: auto;
+            border-radius: 23px;
+        }
+
+        .pic-uic {
+            width: 60px;
+            height: auto;
+            float: left;
+            margin-left: 20px;
+            border-radius: 23px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        p strong {
+            color: #d81b60;
+        }
+
+        .strong-left {
+            text-align: left;
+        }
+
+        .smac {
+            color: #1900ff;
+        }
+
+        .uic {
+            color: #d8344c;
+        }
+
+        .uic:hover {
+            color: #1900ff;
+        }
+
+        .smac:hover {
+            color: #d81b60;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #6a1b9a;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d81b60;
+        }
+
+        .nav-container {
+            background-color: #6a1b9a;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #6a1b9a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .wie:hover {
+            color: #d81b60;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .burger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+
+        @keyframes click-flash {
+            0% {
+                background-color: #d81b60;
+            }
+
+            100% {
+                background-color: #6a1b9a;
+            }
+        }
+
+        .button:active {
+            animation: click-flash 0.3s ease-in-out;
+        }
+
+        
+        /* kuan CP */
+        @media only screen and (max-width: 600px) {
+            body {
+                margin: 10px;
+                font-size: 16px;
+                transition: width 0.5s ease;
+            }
+            nav ul {
+                display: none;
+                transition: width 0.5s ease;
+            }
+
+            .burger {
+                display: block;
+                text-align: center;
+                transition: width 0.5s ease;
+            }
+            .container {
+                padding: 10px;
+                margin: 10px auto;
+                max-width: 90%;
+                transition: width 0.5s ease;
+            }
+            
+            h2 {
+                font-size: 20px;
+                transition: width 0.5s ease;
+            }
+            p {
+                font-size: 15px;
+                transition: width 0.5s ease;
+            }
+            .pic, .pic2, .pic3, .pic-smac {
+                width: 100px;
+                transition: width 0.5s ease;
+            }
+            .button {
+                font-size: 12px;
+                padding: 8px 16px;
+                transition: width 0.5s ease;
+            }
+            .project-images {
+                flex-direction: column;
+                transition: width 0.5s ease;
+            }
+        }
+
+        /* kuan Tablets */
+        @media only screen and (min-width: 601px) and (max-width: 900px) {
+            body {
+                margin: 15px;
+                font-size: 18px;
+                transition: width 0.5s ease;
+            }
+            .container {
+                padding: 15px;
+                margin: 15px auto;
+                max-width: 85%;
+                transition: width 0.5s ease;
+            }
+            h2 {
+                font-size: 24px;
+                transition: width 0.5s ease;
+            }
+            p {
+                font-size: 19px;
+                transition: width 0.5s ease;
+            }
+            .pic, .pic2, .pic3, .pic-smac {
+                width: 130px;
+                transition: width 0.5s ease;
+            }
+            .button {
+                font-size: 15px;
+                transition: width 0.5s ease;
+                padding: 9px 18px;
+            }
+            .project-images {
+                flex-direction: row;
+                transition: width 0.5s ease;
+            }
+        }
+
+        /* Kuan Laptop/Desktop */
+        @media only screen and (min-width: 901px) {
+            body {
+                margin: 20px;
+                font-size: 20px;
+                transition: width 0.5s ease;
+            }
+            .container {
+                padding: 20px;
+                margin: 25px auto;
+                max-width: 800px;
+                transition: width 0.5s ease;
+            }
+            h2 {
+                font-size: 28px;
+                transition: width 0.5s ease;
+            }
+            p {
+                font-size: 20px;
+                transition: width 0.5s ease;
+            }
+            .pic, .pic2, .pic3, .pic-smac {
+                width: 150px;
+                transition: width 0.5s ease;
+            }
+            .button {
+                font-size: 16px;
+                padding: 10px 20px;
+                transition: width 0.5s ease;
+            }
+            .project-images {
+                flex-direction: row;
+                transition: width 0.5s ease;
+            }
+        }
