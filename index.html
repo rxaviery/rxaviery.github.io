@@ -10,27 +10,52 @@
 </head>
 
 <body>
-    <div class="nav-container">
-        <div class="burger">&#9776;</div>
-        <nav>
-            <ul>
-                <li><a href="#about" class="wie">About Me</a></li>
-                <li><a href="#education" class="wie">My Education</a></li>
-                <li><a href="#favorites" class="wie">Favorites</a></li>
-                <li><a href="#projects" class="wie">School Projects</a></li>
-                <li><a href="#talents" class="wie">Talents</a></li>
-                <li><a href="#links" class="wie">External Links</a></li>
-            </ul>
-        </nav>
+    <div class="off-screen-menu">
+    <ul>
+        <li><a href ="#about" class="off-screen-font">About Me</a></li>
+        <li><a href ="#education" class="off-screen-font">My Education</a></li>
+        <li><a href ="#favorites" class="off-screen-font">Favorites</a></li>
+        <li><a href ="#projects" class="off-screen-font">School Projects</a></li>
+        <li><a href ="#talents" class="off-screen-font">Talents</a></li>
+        <li><a href ="#links" class="off-screen-font">External Links</a></li>
+
+    </ul>
+</div>
+
+<nav>
+    <button class="dark-mode-button">Dark Mode</button>
+    <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>   
     </div>
-    <!-- try rag js -->
-    <script>
-        document.querySelector('.burger').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        });
-    </script>
     
+</nav>
+
+<script>
+ const hamMenu = document.querySelector('.ham-menu'); 
+const offScreenMenu = document.querySelector('.off-screen-menu');
+const body = document.body; 
+
+hamMenu.addEventListener('click', () => {
+    hamMenu.classList.toggle('active'); 
+    offScreenMenu.classList.toggle('visible'); 
+    body.classList.toggle('menu-active'); 
+  });
+  const menuItems = document.querySelectorAll('.off-screen-menu li');
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hamMenu.classList.remove('active'); 
+        offScreenMenu.classList.remove('visible'); 
+        body.classList.remove('menu-active'); 
+    });
+});
+const darkModeButton = document.querySelector('.dark-mode-button');
+
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
+</script>
 
     <div id="about" class="container">
         <img class="pic" src="https://rxaviery.github.io/pictures/IMG_20240815_233122_587.jpg" alt="Profile Picture">
