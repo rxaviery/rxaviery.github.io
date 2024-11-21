@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     
     
 </head>
@@ -19,6 +23,7 @@
         <li><a href ="#favorites" class="off-screen-font">Favorites</a></li>
         <li><a href ="#projects" class="off-screen-font">School Projects</a></li>
         <li><a href ="#talents" class="off-screen-font">Talents</a></li>
+        <li><a href ="#apicall" class="off-screen-font">Api Call</a></li>
         <li><a href ="#links" class="off-screen-font">External Links</a></li>
 
     </ul>
@@ -105,40 +110,16 @@
     
 
 
-<script>
-const hamMenu = document.querySelector('.ham-menu'); 
-const offScreenMenu = document.querySelector('.off-screen-menu');
-const body = document.body; 
 
-hamMenu.addEventListener('click', () => {
-    hamMenu.classList.toggle('active'); 
-    offScreenMenu.classList.toggle('visible'); 
-    body.classList.toggle('menu-active'); 
-  });
-  const menuItems = document.querySelectorAll('.off-screen-menu li');
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        hamMenu.classList.remove('active'); 
-        offScreenMenu.classList.remove('visible'); 
-        body.classList.remove('menu-active'); 
-    });
-});
-const toggle = document.querySelector('.darkmode input');
-
-        toggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode'); // Add dark mode class
-            } else {
-                document.body.classList.remove('dark-mode'); // Remove dark mode class
-            }
-        });
-
-</script>
 
     <div id="about" class="container">
         <img src="https://rxaviery.github.io/pictures/mee.png" alt="Profile Picture">
         <h2>About Me</h2>
         <p><strong>Hello!</strong> I am <strong>Renz Xaviery O. Pastrana</strong>, 19 years old and a 2nd year Information Technology (IT) student at the University of Immaculate Conception (UIC). Let's explore together The world of Technology!</p>
+        <h2>Contact Me</h2>
+        <a href="https://github.com/rxaviery" target="_blank"><i class="fab fa-github"></i> </a>
+        <a href="https://www.facebook.com/renz.pastrana.16" target="_blank"><i class="fab fa-facebook"></i> </a>
+
     </div>
 
     
@@ -182,32 +163,60 @@ const toggle = document.querySelector('.darkmode input');
              creativity and debugging, I bring ideas to life while ensuring they run smoothly. </p>
         <p> I can also play the guitar, bringing music to life with every strum.</p>
     </div>
-
-
-<div id="api" class="container"> <h1>Weather App</h1>
-    <p>Enter a city name to get the current weather:</p>
-    <input class="input1" type="text" id="city-input" placeholder="Enter city name">
-    
-    <button id="get-weather">Get Weather</button>
-
-    <div id="weather-container">
-    <div id="weather" class="weather-info">Weather details will appear here.</div>
-    </div></div>
-
-        
-
+    <div>
+        <div id="apicall" class="container">
+        <h2>Get a Random Fact</h2>
+        <button class="apibutton" id="get-fact">Get Fact</button>
+        <div class="apires" id="fact"></div>
     </div>
-    
+</div>
 
     <div id="links" class="container">
         <h2>External Links</h2>
         <div class="button-container">
-            <a href="https://github.com/rxaviery" class="button">Github Profile</a>
-            <a href="https://www.facebook.com/renz.pastrana.16" class="button">Facebook</a>
+            
             <a href="https://rxaviery.github.io/html/fashionblog/index.html" class="button">Fashion Blog</a>
             <a href="https://rxaviery.github.io/healthy-recipes/index.html" class="button">Healthy Recipes</a>
         </div>
     </div>
-<scrip src="../rxaviery.github.io/script.js"></script>
+    <script>
+        const hamMenu = document.querySelector('.ham-menu'); 
+        const offScreenMenu = document.querySelector('.off-screen-menu');
+        const body = document.body; 
+        
+        hamMenu.addEventListener('click', () => {
+            hamMenu.classList.toggle('active'); 
+            offScreenMenu.classList.toggle('visible'); 
+            body.classList.toggle('menu-active'); 
+          });
+          const menuItems = document.querySelectorAll('.off-screen-menu li');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                hamMenu.classList.remove('active'); 
+                offScreenMenu.classList.remove('visible'); 
+                body.classList.remove('menu-active'); 
+            });
+        });
+        const toggle = document.querySelector('.darkmode input');
+        
+                toggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.classList.add('dark-mode'); // Add dark mode class
+                    } else {
+                        document.body.classList.remove('dark-mode'); // Remove dark mode class
+                    }
+                });
+                document.getElementById('get-fact').addEventListener('click', async function() {
+                    const apiUrl = 'https://uselessfacts.jsph.pl/random.json?language=en';
+                    try {
+                        const response = await fetch(apiUrl);
+                        const factData = await response.json();
+                        document.getElementById('fact').innerHTML = factData.text;
+                    } catch (error) {
+                        console.error('Error fetching fact:', error);
+                    }
+                });
+        </script>
+<script src="../rxaviery.github.io/script.js"></script>
 </body>
 </html>

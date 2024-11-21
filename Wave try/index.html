@@ -3,67 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Random Fact</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6f61, #f5a623);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            font-size: 1em;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 1em;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #fff;
+            color: #333;
             border: none;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #f5a623;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        #weather-container {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-
-        .error {
-            color: red;
+        #fact {
+            margin-top: 30px;
+            font-size: 1.5em;
+            max-width: 80%;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <div class="project-content">
-        <h3>DOG API</h3>
-        <button id="apiButton" class="btn">Fetch API Data</button>
-        <br>
-        <div id="apiOutput" class="api-output">
-          <!-- Random Dog Will Appear -->
-        </div>
-<script src="../Wave try/script.js"></script>
+    <div>
+        <h1>Get a Random Fact</h1>
+        <button id="get-fact">Get Fact</button>
+        <div id="fact"></div>
+    </div>
+
+    <script>
+        document.getElementById('get-fact').addEventListener('click', async function() {
+            const apiUrl = 'https://uselessfacts.jsph.pl/random.json?language=en';
+            try {
+                const response = await fetch(apiUrl);
+                const factData = await response.json();
+                document.getElementById('fact').innerHTML = factData.text;
+            } catch (error) {
+                console.error('Error fetching fact:', error);
+            }
+        });
+    </script>
 </body>
 </html>
