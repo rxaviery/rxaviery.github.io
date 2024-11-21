@@ -12,6 +12,35 @@ body {
     background-attachment: fixed;
     color: #333;
 }
+#weather-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: inline-block;
+}
+#city-input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.weather-info {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
 
 .container {
     background-color: rgba(255, 255, 255, 0.85);
@@ -20,6 +49,37 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 25px auto;
+}
+.container2 {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 25px auto;
+}
+.container3 {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 25px auto;
+}
+.container4 {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 25px auto;
+}
+.container img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .off-screen-font li {
@@ -117,12 +177,27 @@ input:checked + label svg.moon {
 
  /* Mag effect ang darkmode */
  .dark-mode .container {
-    background-color: rgba(110, 110, 110, 0.85);
+    background-color: rgba(65, 63, 63, 0.85);
+    color: #e8e8e8; 
+    transition: 0.3s;
+}
+.dark-mode .container2 {
+    background-color: rgba(65, 63, 63, 0.85);
+    color: #e8e8e8; 
+    transition: 0.3s;
+}
+.dark-mode .container3 {
+    background-color: rgba(65, 63, 63, 0.85);
+    color: #e8e8e8; 
+    transition: 0.3s;
+}
+.dark-mode .container4 {
+    background-color: rgba(65, 63, 63, 0.85);
     color: #e8e8e8; 
     transition: 0.3s;
 }
 .dark-mode nav {
-    background-color: rgba(110, 110, 110, 0.85);
+    background-color: rgba(65, 63, 63, 0.85);
  
     transition: 0.3s;
 } 
@@ -178,17 +253,13 @@ h2 {
     justify-content: center;
     gap: 20px;
 }
-
-.pic2,
-.pic3 {
-    width: 220px;
+.project-images img{
+    width: 50%;
     height: auto;
-    border: 1px solid #000000;
-    border-radius: 23px;
 }
 
-.pic-smac {
-    width: 220px;
+.pic-smac img {
+    width: 30%;
     height: auto;
     border-radius: 23px;
 }
@@ -420,10 +491,26 @@ label svg.moon {
         margin: 10px auto;
         max-width: 90%;
     }
+    .container2 {
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 90%;
+    }
+    .container3 {
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 90%;
+    }
+    .container4 {
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 90%;
+    }
     
     .uic,
     .smac {
         font-size: 16px;
+        
     }
 
     h2 {
@@ -434,17 +521,20 @@ label svg.moon {
         font-size: 15px;
     }
 
-    .pic, .pic2, .pic3, .pic-smac {
+    .pic, .pic-smac {
         width: 100px;
     }
+
 
     .button {
         font-size: 12px;
         padding: 8px 16px;
     }
 
-    .project-images {
-        flex-direction: column;
+    .project-images img {
+        flex-direction: row ;
+        width: 45%;
+        height: auto;
     }
 }
 
@@ -492,6 +582,21 @@ label svg.moon {
         margin: 15px auto;
         max-width: 85%;
     }
+    .container2 {
+        padding: 15px;
+        margin: 15px auto;
+        max-width: 85%;
+    }
+    .container3 {
+        padding: 15px;
+        margin: 15px auto;
+        max-width: 85%;
+    }
+    .container4 {
+        padding: 15px;
+        margin: 15px auto;
+        max-width: 85%;
+    }
 
     h2 {
         font-size: 24px;
@@ -501,7 +606,7 @@ label svg.moon {
         font-size: 19px;
     }
 
-    .pic, .pic2, .pic3, .pic-smac {
+    .pic,.pic-smac {
         width: 130px;
     }
 
@@ -510,8 +615,10 @@ label svg.moon {
         padding: 9px 18px;
     }
 
-    .project-images {
+    .project-images img {
         flex-direction: row;
+        width: 50%;
+        height: auto;
     }
 }
 
@@ -527,6 +634,21 @@ label svg.moon {
         margin: 25px auto;
         max-width: 800px;
     }
+    .container2 {
+        padding: 20px;
+        margin: 25px auto;
+        max-width: 800px;
+    }
+    .container3 {
+        padding: 20px;
+        margin: 25px auto;
+        max-width: 800px;
+    }
+    .container4 {
+        padding: 20px;
+        margin: 25px auto;
+        max-width: 800px;
+    }
 
     h2 {
         font-size: 28px;
@@ -535,8 +657,12 @@ label svg.moon {
     p {
         font-size: 20px;
     }
+    .project-images img{
+        width: 50%;
+        height: auto;
+    }
 
-    .pic, .pic2, .pic3, .pic-smac {
+    .pic, .pic-smac {
         width: 150px;
     }
 
@@ -545,8 +671,10 @@ label svg.moon {
         padding: 10px 20px;
     }
 
-    .project-images {
+    .project-images img {
         flex-direction: row;
+        width: 50%;
+        height: auto;
     }
     
    
@@ -636,8 +764,10 @@ label svg.moon {
         padding: 8px 16px;
     }
 
-    .project-images {
-        flex-direction: column;
+    .project-images img {
+        flex-direction: row;
+        width: 50%;
+        height: auto;
     }
     .off-screen-menu {
         width: 30%; 

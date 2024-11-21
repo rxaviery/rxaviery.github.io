@@ -106,7 +106,7 @@
 
 
 <script>
- const hamMenu = document.querySelector('.ham-menu'); 
+const hamMenu = document.querySelector('.ham-menu'); 
 const offScreenMenu = document.querySelector('.off-screen-menu');
 const body = document.body; 
 
@@ -132,16 +132,47 @@ const toggle = document.querySelector('.darkmode input');
                 document.body.classList.remove('dark-mode'); // Remove dark mode class
             }
         });
+
+        async function fetchWeather() {
+            const city = document.getElementById('city-input').value;
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('City not found');
+                }
+                const data = await response.json();
+
+                // Display weather data
+                const weatherContainer = document.getElementById('weather');
+                weatherContainer.innerHTML = `
+                    <p><strong>City:</strong> ${data.name}</p>
+                    <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
+                    <p><strong>Weather:</strong> ${data.weather[0].description}</p>
+                    <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+                    <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+                `;
+            } catch (error) {
+                console.error('Error fetching weather:', error);
+                const weatherContainer = document.getElementById('weather');
+                weatherContainer.innerHTML = `<p>Unable to fetch weather data. Please try again.</p>`;
+            }
+        }
+
+        // Add event listener to the button
+        document.getElementById('get-weather').addEventListener('click', fetchWeather);
 </script>
 
     <div id="about" class="container">
-        <img class="pic" src="https://rxaviery.github.io/pictures/mee.png" alt="Profile Picture">
+        <img src="https://rxaviery.github.io/pictures/mee.png" alt="Profile Picture">
         <h2>About Me</h2>
-        <p><strong>Hello!</strong> I am <strong>Renz Xaviery O. Pastrana</strong>, a 2nd year Information Technology (IT) student at the University of Immaculate Conception (UIC). Let's explore together The world of Technology!</p>
+        <p><strong>Hello!</strong> I am <strong>Renz Xaviery O. Pastrana</strong>, 19 years old and a 2nd year Information Technology (IT) student at the University of Immaculate Conception (UIC). Let's explore together The world of Technology!</p>
     </div>
 
     
-    <div id="education" class="container">
+    <div id="education" class="container2">
         <h2>My Education</h2>
         <p>Current School: <strong><a href="https://www.facebook.com/uicph" class="uic">University of Immaculate Conception</a></strong></p>
         <img class="pic-smac" src="https://rxaviery.github.io/pictures/uic.png" alt="University of Immaculate Conception logo">
@@ -152,7 +183,7 @@ const toggle = document.querySelector('.darkmode input');
         <p>I graduated from <a href="https://www.facebook.com/profile.php?id=100083127740646" class="smac">St. Mary's Academy of Caraga Inc</a>, which is also an RVM school. This school taught me many things about Christianity and also how to be a Marian student.</p>
     </div>
 
-    <div id="favorites" class="container">
+    <div id="favorites" class="container3">
         <h2>Favorites</h2>
         <p>The Favorite things that I love to do when passing time are:</p>
         <ul>
@@ -165,7 +196,7 @@ const toggle = document.querySelector('.darkmode input');
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2Q3QRjA8MjzqpFaIkFludb?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
-    <div id="projects" class="container">
+    <div id="projects" class="container4">
         <h2>School Projects</h2>
         <p>During my Computer Programming 2 course, my partner and I completed a final project called <strong>"Book-It-Now"</strong>. This ICTDU Booking System project included a GUI and SQL database.</p>
         <p><strong>Here are some pictures of the System:</strong></p>
@@ -177,9 +208,25 @@ const toggle = document.querySelector('.darkmode input');
 
     <div id="talents" class="container">
         <h2>Talents</h2>
-        <p>I have skills in code creativity and debugging.</p>
-        <p>I can also play guitar.</p>
+        <p>I have skills in code creativity and debugging since with a passion for both code
+             creativity and debugging, I bring ideas to life while ensuring they run smoothly. </p>
+        <p> I can also play the guitar, bringing music to life with every strum.</p>
     </div>
+
+
+<div id="api" class="container"> <h1>Weather App</h1>
+    <p>Enter a city name to get the current weather:</p>
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="get-weather">Get Weather</button>
+
+    <div id="weather-container">
+        <div id="weather" class="weather-info">Weather details will appear here.</div>
+    </div></div>
+
+        
+
+    </div>
+    
 
     <div id="links" class="container">
         <h2>External Links</h2>
