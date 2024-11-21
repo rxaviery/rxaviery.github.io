@@ -133,7 +133,7 @@ const toggle = document.querySelector('.darkmode input');
             }
         });
 
-        async function fetchWeather() {
+     async function fetchWeather() {
             const city = document.getElementById('city-input').value;
             const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
             const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
