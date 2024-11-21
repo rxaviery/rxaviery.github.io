@@ -12,8 +12,27 @@ html {
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-i { 
+.contact {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;             
+    width: 200px;                    
+    margin: 0 auto;                  
+}
 
+.contact i {
+    font-size: 50px;
+
+    transition: color 0.3s ease, font-size 0.3s ease, transform 0.3s ease;
+}
+
+.contact a {
+    text-decoration: none;           
+    color: inherit;                  
+}
+.contact a:hover i {
+    color: #f5a623; 
+    transform: scale(1.1); 
 }
 .apires {
     margin: auto;
@@ -81,6 +100,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 25px auto;
+    
 }
 .container img {
     width: 40%;
@@ -178,6 +198,7 @@ input:checked + label svg.moon {
 }
 
  /* Mag effect ang darkmode */
+
  .dark-mode .container {
     background-color: rgba(65, 63, 63, 0.85);
     color: #e8e8e8; 
@@ -229,7 +250,17 @@ input:checked + label svg.moon {
 .dark-mode .button {
     background-color: #a447dd; 
 } 
-
+.dark-mode #fact {
+    margin-top: 30px;
+    font-size: 1.5em;
+    max-width: 80%;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(44, 42, 42, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -311,6 +342,7 @@ p strong {
 .button-container {
     margin-top: 20px;
 }
+
 
 .button {
     display: inline-block;
@@ -449,6 +481,20 @@ a {
         margin: 10px;
         font-size: 16px;
     }
+    .apibutton {
+        padding: 10px 15px;
+        font-size: 17px;
+
+        transition: all 0.3s ease;
+    }
+    #fact {
+        margin-top: 30px;
+        font-size: .8em;
+        max-width: 80%;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+
+    }
        
 label {
     width: 87px; 
@@ -546,6 +592,18 @@ label svg.moon {
         margin: 15px;
         font-size: 18px;
     }
+    .apibutton {
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+    #fact {
+        margin-top: 30px;
+        font-size: 1.1em;
+        max-width: 80%;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+
+    }
    
 label {
     width: 90px; 
@@ -630,6 +688,20 @@ label svg.moon {
         margin: 20px;
         font-size: 20px;
     }
+    .apibutton {
+        padding: 15px 30px;
+
+        transition: all 0.3s ease;
+    }
+    #fact {
+        margin-top: 30px;
+        font-size: 1.2em;
+        max-width: 80%;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+
+    }
+    
 
     .container {
         padding: 20px;
@@ -691,6 +763,19 @@ label svg.moon {
     label {
         visibility: hidden;
         transition: 0;
+    }
+    .apibutton {
+        padding: 8px 17px;
+
+        transition: all 0.3s ease;
+    }
+    #fact {
+        margin-top: 30px;
+        font-size: .8em;
+        max-width: 80%;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+
     }
     
     label::after {
