@@ -7,22 +7,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 20px;
             text-align: center;
-            padding: 20px;
         }
-        #weather-container {
-            margin-top: 20px;
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f9f9f9;
-            display: inline-block;
         }
-        input {
+
+        input[type="text"] {
+            width: 80%;
             padding: 10px;
             font-size: 1em;
-            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
+
         button {
             padding: 10px 20px;
             font-size: 1em;
@@ -32,57 +38,32 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #0056b3;
         }
-        .weather-info {
+
+        #weather-container {
             margin-top: 20px;
-            font-size: 1.2em;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .error {
+            color: red;
         }
     </style>
 </head>
 <body>
-    <h1>Weather App</h1>
-    <p>Enter a city name to get the current weather:</p>
-    <input type="text" id="city-input" placeholder="Enter city name">
-    <input type="text" name="" id="">
-    <button id="get-weather">Get Weather</button>
-
-    <div id="weather-container">
-        <div id="weather" class="weather-info">Weather details will appear here.</div>
-    </div>
-
-    <script>
-        async function fetchWeather() {
-            const city = document.getElementById('city-input').value;
-            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
-            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-            try {
-                const response = await fetch(apiUrl);
-                if (!response.ok) {
-                    throw new Error('City not found');
-                }
-                const data = await response.json();
-
-                // Display weather data
-                const weatherContainer = document.getElementById('weather');
-                weatherContainer.innerHTML = `
-                    <p><strong>City:</strong> ${data.name}</p>
-                    <p><strong>Temperature:</strong> ${data.main.temp}°C</p>
-                    <p><strong>Weather:</strong> ${data.weather[0].description}</p>
-                    <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
-                    <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
-                `;
-            } catch (error) {
-                console.error('Error fetching weather:', error);
-                const weatherContainer = document.getElementById('weather');
-                weatherContainer.innerHTML = `<p>Unable to fetch weather data. Please try again.</p>`;
-            }
-        }
-
-        // Add event listener to the button
-        document.getElementById('get-weather').addEventListener('click', fetchWeather);
-    </script>
+    <div class="project-content">
+        <h3>DOG API</h3>
+        <button id="apiButton" class="btn">Fetch API Data</button>
+        <br>
+        <div id="apiOutput" class="api-output">
+          <!-- Random Dog Will Appear -->
+        </div>
+<script src="../Wave try/script.js"></script>
 </body>
 </html>
